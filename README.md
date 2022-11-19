@@ -1,2 +1,2 @@
-# react_portfolio
-Portfolio website with react
+# React Portfolio
+My first React Project and it's my Portfolio! :)
