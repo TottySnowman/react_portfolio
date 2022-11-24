@@ -68,7 +68,7 @@ export default function about({ innerRef }) {
         <div className="about__cards">
           <article className='about__card'>
           <FaAward className='about__icon'/>
-            <h5>Experience</h5>
+            <h5>C# Development</h5>
             <small>3 Years</small>
 
           </article>
