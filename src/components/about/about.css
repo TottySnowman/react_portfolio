@@ -46,8 +46,9 @@
 }
 .about__icon{
     color: var(--color-primary);
-    font-size: 1.4rem;
+    font-size: 2rem;
     margin-bottom: 1rem;
+
 }
 
 .about__card h5{
@@ -78,6 +79,9 @@
     .about__content p {
         margin: 1rem 0 1.5rem;
     }
+    .about__icon{
+        font-size: 1.6rem;
+    }
 }
 
 @media screen and (max-width: 600px){
@@ -97,5 +101,9 @@
 
     .about__content p {
         margin: 1.5rem 0;
+    }
+
+    .about__icon{
+        font-size: 1.4rem;
     }
 }
