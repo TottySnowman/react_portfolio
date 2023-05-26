@@ -6,7 +6,8 @@ import Experience from './components/experience/experience'
 import Portfolio from './components/portfolio/portfolio'
 import Footer from './components/footer/footer'
 import Contact from './components/contact/contact'
-import {useRef, useEffect} from 'react'
+import About_new from './components/about_new/about_new'
+import {useEffect} from 'react'
 
 
 
@@ -16,9 +17,6 @@ const App = () => {
       entries.forEach((entry) =>{
           if(entry.isIntersecting){
               entry.target.classList.add('show');
-          }
-          else{
-              entry.target.classList.remove('show');
           }
       });
   });
@@ -34,20 +32,8 @@ const App = () => {
       <Portfolio/>
       <Contact/>
       <Footer/>
+      <About_new/>
     </>
   )
 }
-
-
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) =>{
-      if(entry.isIntersecting){
-          entry.target.classList.add('show');
-      }
-      else{
-          entry.target.classList.remove('show');
-      }
-  });
-});
 export default App
