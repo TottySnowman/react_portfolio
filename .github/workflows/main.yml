@@ -22,7 +22,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run react build script
-        run: npm install && npm run build
+        run: rm -rf node_modules && yarn install && yarn build
         env:
           CI: false
 
