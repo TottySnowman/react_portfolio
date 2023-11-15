@@ -1,31 +1,40 @@
 import React from "react";
 import "./footer.css";
-import { BsLinkedin } from "react-icons/bs";
-import { BsTwitter } from "react-icons/bs";
-import { BsGithub } from "react-icons/bs";
+import { BsLinkedin, BsTwitter, BsGithub } from "react-icons/bs";
+import { AiOutlineRocket } from "react-icons/ai";
 
 const footer = () => {
   return (
     <footer>
-      <a href="#" className="footer__logo">
-        Wortmann
+      <a href="#" className="footer__logo" rel="noreferrer">
+        <AiOutlineRocket size={50} />
       </a>
 
       <ul className="permalinks">
         <li>
-          <a href="#">Home</a>
+          <a href="#" rel="noreferrer">
+            Home
+          </a>
         </li>
         <li>
-          <a href="#about">About</a>
+          <a href="#about" rel="noreferrer">
+            About
+          </a>
         </li>
         <li>
-          <a href="#experience">Experience</a>
+          <a href="#experience" rel="noreferrer">
+            Experience
+          </a>
         </li>
         <li>
-          <a href="#portfolio">Portfolio</a>
+          <a href="#portfolio" rel="noreferrer">
+            Portfolio
+          </a>
         </li>
         <li>
-          <a href="#contact">Contact</a>
+          <a href="#contact" rel="noreferrer">
+            Contact
+          </a>
         </li>
       </ul>
 
@@ -33,13 +42,18 @@ const footer = () => {
         <a
           href="https://www.linkedin.com/in/paul-philippe-wortmann/"
           target="_blank"
+          rel="noreferrer"
         >
           <BsLinkedin />
         </a>
-        <a href="" target="_blank">
+        <a href="https://twitter.com/gez_wat" target="_blank" rel="noreferrer">
           <BsTwitter />
         </a>
-        <a href="https://github.com/TottySnowman" target="_blank">
+        <a
+          href="https://github.com/TottySnowman"
+          target="_blank"
+          rel="noreferrer"
+        >
           <BsGithub />
         </a>
       </div>

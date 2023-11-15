@@ -51,7 +51,7 @@ const Portfolio = () => {
               }) => {
                 return (
                   <article key={ID} className="portfolio__item">
-                    <div className="portfolio__item-image">
+                    <div className="portfolio__item-image" key={ID}>
                       <img src={Logo_Path} alt={Name} className="logo" />
                     </div>
                     <h3>{Name}</h3>

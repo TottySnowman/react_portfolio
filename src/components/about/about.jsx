@@ -14,7 +14,7 @@ export default function About({ innerRef }) {
       <h2>Me</h2>
 
       <div className="container about__container">
-        <div class="cardGroup">
+        <div className="cardGroup">
           <img src={Gym} alt="Gym" className="card" />
           <img src={Reading} alt="Reading books" className="card" />
           <img src={Me_Front} alt="Me" className="card" />

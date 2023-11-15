@@ -37,7 +37,17 @@
 @media screen and (max-width: 1024px) {
   .portfolio__container {
     grid-template-columns: 1fr 1fr;
-    gap: 1.2rem;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .portfolio__item {
+    background: var(--color-bg-variant);
+    padding: 0.5rem;
+    border-radius: 2rem;
+    border: 1px solid transparent;
+    transition: var(--transition);
+    position: relative;
   }
 }
 
