@@ -1,33 +1,68 @@
-import React from 'react'
-import './footer.css'
-import {BsFacebook} from 'react-icons/bs'
-import {BsTwitter} from 'react-icons/bs'
-import {BsGithub} from 'react-icons/bs'
+import React from "react";
+import "./footer.css";
+import { BsLinkedin, BsTwitter, BsGithub } from "react-icons/bs";
+import { AiOutlineRocket } from "react-icons/ai";
 
 const footer = () => {
   return (
     <footer>
-      <a href="#" className='footer__logo'>Wortmann</a>
-    
+      <a href="#" className="footer__logo" rel="noreferrer">
+        <AiOutlineRocket size={50} />
+      </a>
+
       <ul className="permalinks">
-        <li><a href="#">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li>
+          <a href="#" rel="noreferrer">
+            Home
+          </a>
+        </li>
+        <li>
+          <a href="#about" rel="noreferrer">
+            About
+          </a>
+        </li>
+        <li>
+          <a href="#experience" rel="noreferrer">
+            Experience
+          </a>
+        </li>
+        <li>
+          <a href="#portfolio" rel="noreferrer">
+            Portfolio
+          </a>
+        </li>
+        <li>
+          <a href="#contact" rel="noreferrer">
+            Contact
+          </a>
+        </li>
       </ul>
 
       <div className="footer__socials">
-        <a href=""><BsFacebook/></a>
-        <a href=""><BsTwitter/></a>
-        <a href=""><BsGithub/></a>
+        <a
+          href="https://www.linkedin.com/in/paul-philippe-wortmann/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <BsLinkedin />
+        </a>
+        <a href="https://twitter.com/gez_wat" target="_blank" rel="noreferrer">
+          <BsTwitter />
+        </a>
+        <a
+          href="https://github.com/TottySnowman"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <BsGithub />
+        </a>
       </div>
 
       <div className="footer__copyright">
         <small>&copy; Paul-Philippe Wortmann. All rights reserved.</small>
       </div>
     </footer>
-  )
-}
+  );
+};
 
-export default footer
+export default footer;
