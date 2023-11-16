@@ -1,7 +1,7 @@
 import React from "react";
 import "./header.css";
 import CV from "./CV";
-import main_pic from "../../assets/Pictures/paul-wortmann.png";
+import main_pic from "../../assets/Pictures/paul-wortmann.jpeg";
 import Socials from "./socials";
 
 const header = () => {
@@ -13,9 +13,10 @@ const header = () => {
         <h5 className="text-light">Junior Application Developer</h5>
         <CV />
         <Socials />
-        <div className="main_picture">
+        <img src={main_pic} alt="main" className="main_picture" />
+        {/*         <div className="main_picture">
           <img src={main_pic} alt="main" />
-        </div>
+        </div> */}
       </div>
     </header>
   );
