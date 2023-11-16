@@ -1,10 +1,22 @@
-import { React, useRef as UseRef } from "react";
+import React, { useRef as UseRef, useState } from "react";
 import "./contact.css";
 import { HiMail } from "react-icons/hi";
 import { BsWhatsapp } from "react-icons/bs";
 import emailjs from "emailjs-com";
+import Toast from "../toast/toast";
 
-const contact = () => {
+const Contact = () => {
+  const [showToast, setShowToast] = useState(true);
+  const [toastMessage, setToastMessage] = useState("");
+  const [success, setSuccess] = useState(false);
+
+  const handleShowToast = () => {
+    setShowToast(true);
+  };
+
+  const handleCloseToast = () => {
+    setShowToast(false);
+  };
   const form = UseRef();
   const sendEmail = (e) => {
     e.preventDefault();
@@ -18,13 +30,16 @@ const contact = () => {
       )
       .then(
         (result) => {
-          console.log(result.text);
+          setSuccess(true);
+          setToastMessage("Message sent successfully! Thank you!");
           e.target.reset();
         },
         (error) => {
-          console.log(error.text);
+          setSuccess(false);
+          setToastMessage("There seems to be an error! Please try again!");
         }
-      );
+      )
+      .then(handleShowToast());
   };
   return (
     <section id="contact" className="hidden">
@@ -66,8 +81,14 @@ const contact = () => {
           </button>
         </form>
       </div>
+      <Toast
+        message={toastMessage}
+        showToast={showToast}
+        onClose={handleCloseToast}
+        success={success}
+      />
     </section>
   );
 };
 
-export default contact;
+export default Contact;
