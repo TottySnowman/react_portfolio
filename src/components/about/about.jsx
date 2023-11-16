@@ -6,6 +6,7 @@ import { SiSap } from "react-icons/si";
 import Me_Front from "../../assets/Pictures/paul_wortmann_portrait.jpeg";
 import Reading from "../../assets/Pictures/hobbies/reading.png";
 import Gym from "../../assets/Pictures/hobbies/Gym.png";
+import NFT from "../../assets/Pictures/hobbies/NFT_Preview.png";
 
 export default function About({ innerRef }) {
   return (
@@ -17,7 +18,7 @@ export default function About({ innerRef }) {
         <div className="cardGroup">
           <img src={Gym} alt="Gym" className="card" />
           <img src={Reading} alt="Reading books" className="card" />
-          <img src={Me_Front} alt="Me" className="card" />
+          <img src={NFT} alt="NFT" className="card" />
         </div>
 
         <div className="about__content">
