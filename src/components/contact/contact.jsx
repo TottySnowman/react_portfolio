@@ -33,13 +33,14 @@ const Contact = () => {
           setSuccess(true);
           setToastMessage("Message sent successfully! Thank you!");
           e.target.reset();
+          handleShowToast();
         },
         (error) => {
           setSuccess(false);
           setToastMessage("There seems to be an error! Please try again!");
+          handleShowToast();
         }
-      )
-      .then(handleShowToast());
+      );
   };
   return (
     <section id="contact" className="hidden">
