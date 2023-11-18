@@ -5,6 +5,7 @@ const Toast = ({ message, showToast, onClose, success }) => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    console.log(isVisible);
     if (showToast) {
       setIsVisible(true);
       const timer = setTimeout(() => {
