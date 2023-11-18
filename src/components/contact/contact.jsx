@@ -6,7 +6,7 @@ import emailjs from "emailjs-com";
 import Toast from "../toast/toast";
 
 const Contact = () => {
-  const [showToast, setShowToast] = useState(true);
+  const [showToast, setShowToast] = useState(false);
   const [toastMessage, setToastMessage] = useState("");
   const [success, setSuccess] = useState(false);
 

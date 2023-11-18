@@ -3,8 +3,8 @@
   grid-template-columns: 20% 50%;
   gap: 15%;
 }
-#about{
-  margin-top: 2rem;
+#about {
+  margin-top: 3rem;
 }
 
 .about__me {
@@ -178,4 +178,3 @@
   //transform: translate(75%, 16%) rotate(24deg);
   transform: translate(80%, 20%) rotate(30deg);
 }
-
