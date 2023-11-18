@@ -48,18 +48,6 @@ header {
   border-radius: 12rem 12rem 0 0;
 }
 
-@media (min-width: 1025px) {
-  header: {
-    height: 70vh;
-  }
-}
-
-@media (min-width: 1201) {
-  header: {
-    height: 65vh;
-  }
-}
-
 @media screen and (max-width: 1024px) {
   header {
     height: 68vh;
