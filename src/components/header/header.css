@@ -52,6 +52,11 @@ header {
   header {
     height: 68vh;
   }
+  .main_picture img {
+    width: 90vmin;
+    height: 95hmin;
+    border-radius: 12rem 12rem 0 0;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -59,8 +64,10 @@ header {
     height: 100vh;
     padding-top: 4rem;
   }
-  .main_picture {
-    height: 18rem;
+  .main_picture img {
+    width: 65vmin;
+    height: 95hmin;
+    border-radius: 12rem 12rem 0 0;
   }
   .header__container {
     position: static;
