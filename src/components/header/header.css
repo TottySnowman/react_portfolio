@@ -50,10 +50,10 @@ header {
 
 @media screen and (max-width: 1024px) {
   header {
-    height: 68vh;
+    height: 100vh;
   }
   .main_picture img {
-    width: 90vmin;
+    width: 75vmin;
     height: 95hmin;
     border-radius: 12rem 12rem 0 0;
   }
