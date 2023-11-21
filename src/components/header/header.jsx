@@ -1,7 +1,7 @@
 import React from "react";
 import "./header.css";
 import CV from "./CV";
-import main_pic from "../../assets/Pictures/paul_wortmann_main.png";
+import main_pic from "../../assets/Pictures/paul_wortmann_main.jpeg";
 import Socials from "./socials";
 
 const header = () => {
