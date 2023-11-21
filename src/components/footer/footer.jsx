@@ -36,9 +36,6 @@ const footer = () => {
             Contact
           </a>
         </li>
-        <li>
-          <a>Hello World</a>
-        </li>
       </ul>
 
       <div className="footer__socials">
