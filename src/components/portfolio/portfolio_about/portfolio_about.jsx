@@ -9,6 +9,7 @@ import {
   SiNeo4J,
   SiHiveBlockchain,
   SiSolidity,
+  SiCsharp,
 } from "react-icons/si";
 import { BsImageFill } from "react-icons/bs";
 const PortfolioAbout = ({
@@ -46,6 +47,7 @@ const PortfolioAbout = ({
     SiNeo4J: SiNeo4J,
     SiHiveBlockchain: SiHiveBlockchain,
     SiSolidity: SiSolidity,
+    SiCsharp: SiCsharp,
   };
 
   const DynamicIconFromDB = ({ iconName }) => {
