@@ -11,13 +11,13 @@ const Portfolio = () => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(
-        "https://zany-lime-dhole-ring.cyclic.app/getAllProjects"
+        "https://api.paul-wortmann.me/project"
       );
       if (response.ok) {
         const data = await response.json();
         setProjectData(data);
       } else {
-        fetchData();
+        console.log("Ayo")
       }
     };
 
