@@ -35,8 +35,8 @@ const Portfolio = () => {
         <h2>Portfolio</h2>
 
         <div className="container portfolio__container">
-          {!isLoadingProjects &&
-            projectData(
+          {!isLoadingProjects ? (
+            projectData && projectData.length > 0 ? (
               projectData.map(
                 ({
                   ID,
@@ -50,13 +50,13 @@ const Portfolio = () => {
                 }) => {
                   return (
                     <article key={ID} className="portfolio__item">
-                      <div className="portfolio__item-image" key={ID}>
+                      <div className="portfolio__item-image">
                         <img src={Logo_Path} alt={Name} className="logo" />
                       </div>
                       <h3>{Name}</h3>
                       <div className="portfolio__item-cta">
                         <a
-                          href={Github_Link ? Github_Link : null}
+                          href={Github_Link || "#"}
                           className={
                             Github_Link
                               ? "btn btn-primary"
@@ -68,7 +68,7 @@ const Portfolio = () => {
                           Github
                         </a>
                         <a
-                          href={Demo_Link ? Demo_Link : null}
+                          href={Demo_Link || "#"}
                           className={Demo_Link ? "btn" : "btn disabled-link"}
                           target="_blank"
                           rel="noreferrer"
@@ -87,11 +87,13 @@ const Portfolio = () => {
                     </article>
                   );
                 },
-              ),
-            )}
-          {isLoadingProjects && <h3>Loading projects...</h3>}
-          {!isLoadingProjects &&
-            !projectData(<h3>Failed to load projects!</h3>)}
+              )
+            ) : (
+              <h3>Failed to load projects!</h3>
+            )
+          ) : (
+            <h3>Loading projects...</h3>
+          )}
         </div>
       </section>
       <PortfolioAbout
