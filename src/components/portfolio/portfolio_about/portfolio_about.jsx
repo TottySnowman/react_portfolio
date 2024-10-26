@@ -79,7 +79,7 @@ const PortfolioAbout = ({
                   return (
                     <li className="tagItem">
                       <div style={{ display: "flex", alignItems: "center" }}>
-                        <DynamicIconFromDB iconName={tag.Icon} />
+                        <DynamicIconFromDB iconName={tag.TagIcon} />
                         {tag.Tag}
                       </div>
                     </li>

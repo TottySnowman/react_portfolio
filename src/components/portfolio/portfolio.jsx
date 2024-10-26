@@ -3,6 +3,7 @@ import "./portfolio.css";
 import PortfolioAbout from "./portfolio_about/portfolio_about";
 const Portfolio = () => {
   const [projectData, setProjectData] = useState(null);
+  const [isLoadingProjects, setIsLoadingProjects] = useState(true);
   const [openModal, setOpenModal] = useState(false);
   const [about, setAbout] = useState("");
   const [projectTitle, setProjectTitle] = useState("");
@@ -10,15 +11,12 @@ const Portfolio = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch(
-        "https://api.paul-wortmann.me/project"
-      );
+      const response = await fetch("https://api.paul-wortmann.me/project");
       if (response.ok) {
         const data = await response.json();
         setProjectData(data);
-      } else {
-        console.log("Ayo")
       }
+      setIsLoadingProjects(false);
     };
 
     fetchData();
@@ -37,61 +35,63 @@ const Portfolio = () => {
         <h2>Portfolio</h2>
 
         <div className="container portfolio__container">
-          {projectData ? (
-            projectData.map(
-              ({
-                ID,
-                Name,
-                About,
-                Github_Link,
-                Demo_Link,
-                Logo_Path,
-                Tags,
-                Status,
-              }) => {
-                return (
-                  <article key={ID} className="portfolio__item">
-                    <div className="portfolio__item-image" key={ID}>
-                      <img src={Logo_Path} alt={Name} className="logo" />
-                    </div>
-                    <h3>{Name}</h3>
-                    <div className="portfolio__item-cta">
-                      <a
-                        href={Github_Link ? Github_Link : null}
-                        className={
-                          Github_Link
-                            ? "btn btn-primary"
-                            : "btn btn-primary disabled-link"
-                        }
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        Github
-                      </a>
-                      <a
-                        href={Demo_Link ? Demo_Link : null}
-                        className={Demo_Link ? "btn" : "btn disabled-link"}
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        Live Demo
-                      </a>
+          {!isLoadingProjects &&
+            projectData(
+              projectData.map(
+                ({
+                  ID,
+                  Name,
+                  About,
+                  Github_Link,
+                  Demo_Link,
+                  Logo_Path,
+                  Tags,
+                  Status,
+                }) => {
+                  return (
+                    <article key={ID} className="portfolio__item">
+                      <div className="portfolio__item-image" key={ID}>
+                        <img src={Logo_Path} alt={Name} className="logo" />
+                      </div>
+                      <h3>{Name}</h3>
+                      <div className="portfolio__item-cta">
+                        <a
+                          href={Github_Link ? Github_Link : null}
+                          className={
+                            Github_Link
+                              ? "btn btn-primary"
+                              : "btn btn-primary disabled-link"
+                          }
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          Github
+                        </a>
+                        <a
+                          href={Demo_Link ? Demo_Link : null}
+                          className={Demo_Link ? "btn" : "btn disabled-link"}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          Live Demo
+                        </a>
 
-                      <button
-                        onClick={() => handleOpenModal(About, Name, Tags)}
-                        className="btn btn-primary"
-                      >
-                        About
-                      </button>
-                    </div>
-                    <div className="portfolio__item-state">{Status}</div>
-                  </article>
-                );
-              }
-            )
-          ) : (
-            <h3>Loading projects...</h3>
-          )}
+                        <button
+                          onClick={() => handleOpenModal(About, Name, Tags)}
+                          className="btn btn-primary"
+                        >
+                          About
+                        </button>
+                      </div>
+                      <div className="portfolio__item-state">{Status}</div>
+                    </article>
+                  );
+                },
+              ),
+            )}
+          {isLoadingProjects && <h3>Loading projects...</h3>}
+          {!isLoadingProjects &&
+            !projectData(<h3>Failed to load projects!</h3>)}
         </div>
       </section>
       <PortfolioAbout
