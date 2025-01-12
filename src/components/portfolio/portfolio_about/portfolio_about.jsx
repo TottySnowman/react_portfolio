@@ -2,7 +2,7 @@ import { useRef, useEffect } from "react";
 import { GrReactjs } from "react-icons/gr";
 import { FaNodeJs, FaJava, FaPhp } from "react-icons/fa";
 import { AiOutlineHtml5 } from "react-icons/ai";
-import { TbBrandNextjs, TbBrandCss3 } from "react-icons/tb";
+import { TbBrandNextjs, TbBrandCss3, TbBrandGolang } from "react-icons/tb";
 import {
   SiTypescript,
   SiJavascript,
@@ -48,6 +48,7 @@ const PortfolioAbout = ({
     SiHiveBlockchain: SiHiveBlockchain,
     SiSolidity: SiSolidity,
     SiCsharp: SiCsharp,
+    TbBrandGolang: TbBrandGolang
   };
 
   const DynamicIconFromDB = ({ iconName }) => {

@@ -26,7 +26,7 @@ export default function About({ innerRef }) {
             <article className="about__card">
               <FaAward className="about__icon" />
               <h5>C# & ASP.NET Development</h5>
-              <small>4 Years</small>
+              <small>5 Years</small>
             </article>
 
             <article className="about__card">
@@ -42,15 +42,14 @@ export default function About({ innerRef }) {
             </article>
           </div>
           <p>
-            My name is Paul-Philippe Wortmann. I am currently working at Bell
-            Food Group as a Junior Application Developer and I am also the
-            practice educator for C#. Before I explored the world of coding I
+            My name is Paul-Philippe Wortmann. I am currently working at Careanesth AG as Full-Stack Developer. 
+            Before I explored the world of coding I
             finished my apprenticeship as a Food technologist at Ricola.
           </p>
           <p>
             In my free time I like to go to the gym to maintain my physical
             shape, but I also like to learn about new technologies mostly about
-            new frameworks, AI and blockchain. But I also really enjoy reading
+            new frameworks, AI and new languages. But I also really enjoy reading
             books and spending quality time with the family.
           </p>
         </div>
