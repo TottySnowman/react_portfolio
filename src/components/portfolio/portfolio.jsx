@@ -11,7 +11,8 @@ const Portfolio = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch("https://api.paul-wortmann.me/project");
+      //const response = await fetch("https://api.paul-wortmann.me/project");
+      const response = await fetch("http://localhost:6001/project");
       if (response.ok) {
         const data = await response.json();
         setProjectData(data);
@@ -83,7 +84,7 @@ const Portfolio = () => {
                           About
                         </button>
                       </div>
-                      <div className="portfolio__item-state">{Status}</div>
+                      <div className="portfolio__item-state">{Status.Status}</div>
                     </article>
                   );
                 },
