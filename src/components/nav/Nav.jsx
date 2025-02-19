@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./nav.css";
-import "../chatbot/chatbot.css"
 import { FaHome, FaCode } from "react-icons/fa";
 import { GoPerson } from "react-icons/go";
 import { GiBookPile } from "react-icons/gi";
