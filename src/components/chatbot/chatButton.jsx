@@ -3,10 +3,11 @@ import "./chatbot.css";
 
 const ChatButton = () => {
   const [isChatOpen, setIsChatOpen] = useState(false);
-  const [messages, setMessages] = useState([]); 
+  const [messages, setMessages] = useState([
+    { text: "Hello! How can I assist you today?", role: "system" },
+  ]);
   const [input, setInput] = useState("");
   const chatBodyRef = useRef(null);
-
   useEffect(() => {
     if (chatBodyRef.current) {
       chatBodyRef.current.scrollTop = chatBodyRef.current.scrollHeight;
@@ -15,8 +16,15 @@ const ChatButton = () => {
 
   const handleSendMessage = () => {
     if (input.trim() !== "") {
-      setMessages([...messages, input]);
+      setMessages([...messages, { text: input, role: "user" }]);
       setInput("");
+
+      setTimeout(() => {
+        setMessages((prevMessages) => [
+          ...prevMessages,
+          { text: "I'm here to help!", role: "system" },
+        ]);
+      }, 1000);
     }
   };
 
@@ -42,15 +50,11 @@ const ChatButton = () => {
           </div>
 
           <div className="chat-body" ref={chatBodyRef}>
-            {messages.length > 0 ? (
-              messages.map((msg, index) => (
-                <div key={index} className="chat-message">
-                  {msg}
-                </div>
-              ))
-            ) : (
-              <p className="no-messages">No messages yet</p>
-            )}
+            {messages.map((msg, index) => (
+              <div key={index} className={`chat-message ${msg.role}`}>
+                {msg.text}
+              </div>
+            ))}
           </div>
 
           <div className="chat-footer">

@@ -54,20 +54,28 @@
   background: #f9f9f9;
   margin-top: 5px;
   border-radius: 5px;
-  color:black;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: black;
 }
 
-.chat-message {
-  background-color: #e0f7fa;
-  padding: 5px;
-  margin-bottom: 5px;
-  border-radius: 5px;
-  color:black;
+.chat-message.user {
+  align-self: flex-end;
+  background-color: #007bff;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 10px;
+  max-width: 80%;
 }
 
-.no-messages {
-  text-align: center;
-  color: gray;
+.chat-message.system {
+  align-self: flex-start;
+  background-color: #e0e0e0;
+  color: black;
+  padding: 5px 10px;
+  border-radius: 10px;
+  max-width: 80%;
 }
 
 .chat-footer {
@@ -81,7 +89,7 @@
   padding: 5px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  color:black;
+  color: black;
 }
 
 .send-button {
