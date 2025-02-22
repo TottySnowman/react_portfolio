@@ -17,18 +17,44 @@ const ChatButton = () => {
     }
   }, [messages]);
 
-  const handleSendMessage = () => {
+  const handleSendMessage = async () => {
     if (input.trim() !== "") {
       setMessages([...messages, { text: input, role: "user" }]);
       setInput("");
 
-      setTimeout(() => {
-        setMessages((prevMessages) => [
-          ...prevMessages,
-          { text: "I'm here to help!", role: "system" },
-        ]);
-      }, 1000);
+      const message = await sendMessageAndGetResponse(input);
+      setMessages((prevMessages) => [
+        ...prevMessages,
+        { text: message, role: "system" },
+      ]);
     }
+  };
+
+  const sendMessageAndGetResponse = async (question) => {
+    try {
+      const requestBody = {
+        Prompt: question,
+        pointId: "",
+      };
+      const response = await fetch("http://localhost:6001/chat", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(requestBody),
+      });
+
+      if (!response.ok) {
+        const result = await response.json();
+        return result.errors;
+      }
+
+      const result = await response.json();
+      return result.message;
+    } catch (error) {
+      console.error("Error:", error);
+    }
+    return "Failed to generate message!";
   };
 
   const handleChatOpenClick = async () => {
