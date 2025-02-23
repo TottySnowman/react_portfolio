@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import "./chatbot.css";
 import ClipLoader from "react-spinners/ClipLoader";
+import { FaQuestionCircle, FaTimesCircle } from "react-icons/fa";
 
 const ChatButton = () => {
   const [isChatOpen, setIsChatOpen] = useState(false);
@@ -48,7 +49,6 @@ const ChatButton = () => {
         const result = await response.json();
         return result.errors;
       }
-
       const result = await response.json();
       return result.message;
     } catch (error) {
@@ -85,7 +85,7 @@ const ChatButton = () => {
         className="chat-button"
         onClick={async () => await handleChatOpenClick()}
       >
-        {isChatOpen ? "Close Chat" : "Start Chat"}
+        {isChatOpen ? <FaTimesCircle/> : <FaQuestionCircle />}
       </button>
 
       {isChatOpen && (
