@@ -83,7 +83,7 @@ const Portfolio = () => {
                           About
                         </button>
                       </div>
-                      <div className="portfolio__item-state">{Status}</div>
+                      <div className="portfolio__item-state">{Status.Status}</div>
                     </article>
                   );
                 },

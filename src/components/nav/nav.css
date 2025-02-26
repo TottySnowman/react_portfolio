@@ -31,3 +31,12 @@ nav a.active{
     background: var(--color-primary);
     color: var(--color-bg);
 }
+.floating-right {
+    width: max-content;
+    display: flex;
+    padding: 0.7rem;
+    position: fixed;
+    z-index: 2;
+    right: 2rem;
+    bottom: 2rem;
+}
