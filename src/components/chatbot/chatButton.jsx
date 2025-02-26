@@ -37,7 +37,7 @@ const ChatButton = () => {
         Prompt: question,
         pointId: "",
       };
-      const response = await fetch("http://localhost:6001/chat", {
+      const response = await fetch("https://api.paul-wortmann.me/chat", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -59,7 +59,7 @@ const ChatButton = () => {
 
   const handleChatOpenClick = async () => {
     if (socket == null) {
-      const ws = new WebSocket("ws:localhost:6001/chat/ws");
+      const ws = new WebSocket("ws:api.paul-wortmann.me/chat/ws");
 
       ws.onopen = () => {
         ws.send("get model state");

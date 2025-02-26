@@ -11,8 +11,7 @@ const Portfolio = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      //const response = await fetch("https://api.paul-wortmann.me/project");
-      const response = await fetch("http://localhost:6001/project");
+      const response = await fetch("https://api.paul-wortmann.me/project");
       if (response.ok) {
         const data = await response.json();
         setProjectData(data);
